@@ -1,0 +1,90 @@
+.navbar {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: var(--bg-color); /* Dynamically uses theme background */
+  z-index: 1000;
+  transition: background-color var(--transition-speed) var(--easing), border-color var(--transition-speed) var(--easing);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s var(--easing);
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-logo-img {
+  height: 48px;
+  width: auto;
+  transition: filter 0.3s var(--easing), opacity 0.3s var(--easing);
+}
+
+/* Amélioration de l'intégration du logo sombre */
+[data-theme='dark'] .nav-logo-img {
+  filter: brightness(1.2) contrast(1.1);
+}
+
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-item {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: lowercase;
+  color: var(--text-muted);
+  transition: color 0.3s var(--easing);
+}
+
+
+.nav-item:hover, .nav-item.active {
+  color: var(--text-color);
+}
+
+.nav-item.active {
+  position: relative;
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-color);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: all 0.3s var(--easing);
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}

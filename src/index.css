@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  /* Fonts */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  /* Colors - Light Mode (White & Blue) */
+  --bg-color: #ffffff;
+  --text-color: #001d3d; /* Contrasting deep blue */
+  --text-muted: #64748b;
+  --accent-color: #0ea5e9; /* Sky blue accent */
+  --card-bg: #f8fafc;
+  --border-color: #e2e8f0;
+  
+  /* Layout */
+  --max-width: 100%;
+  --header-height: 100px;
+  --transition-speed: 0.6s;
+  --easing: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme='dark'] {
+  --bg-color: #000000;
+  --text-color: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-color: #38bdf8;
+  --card-bg: rgba(15, 23, 42, 0.3);
+  --border-color: rgba(51, 65, 85, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  line-height: 1.4; /* Tighter leading for editorial feel */
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--transition-speed) var(--easing), color var(--transition-speed) var(--easing);
+  overflow-x: hidden;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0;
+  padding: 0 4vw;
+}
+
+/* Typography */
+h1, h2, h3, h4, .serif {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--text-color);
+  letter-spacing: -0.02em;
+}
+
+.section-title {
+  font-size: clamp(3rem, 10vw, 8rem); /* Fluid typography */
+  line-height: 0.9;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.sub-title {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Helper Classes */
+.accent {
+  color: var(--accent-color);
+}
+
+.minimal-card {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 2rem 0;
+  transition: all 0.4s var(--easing);
+  backdrop-filter: blur(4px);
+}
+
+.minimal-card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.minimal-card:hover {
+  padding-left: 1rem;
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.05);
+}
+
