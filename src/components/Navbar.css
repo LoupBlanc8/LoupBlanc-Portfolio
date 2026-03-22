@@ -33,7 +33,10 @@
   transition: filter 0.3s var(--easing), opacity 0.3s var(--easing);
 }
 
-
+/* Force le fond sombre du logo à se fondre totalement dans le noir */
+[data-theme='dark'] .nav-logo-img {
+  mix-blend-mode: screen;
+}
 
 .nav-links {
   display: flex;
