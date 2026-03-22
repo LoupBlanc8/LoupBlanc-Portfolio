@@ -23,21 +23,23 @@ const Projects: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="w-full py-16 md:py-28 px-8 md:px-16"
+      className="w-full py-12 md:py-16 px-8 md:px-16"
     >
       {/* Header + Filtre sur la même ligne */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8" style={{ marginBottom: 'clamp(80px, 10vh, 150px)' }}>
-        <div className="flex flex-col gap-5 w-full md:w-auto">
-          <div className="flex flex-row items-center gap-8">
-            <h1 className="text-5xl md:text-6xl font-serif font-bold tracking-tight">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8" style={{ marginBottom: 'clamp(60px, 8vh, 120px)' }}>
+        <div className="flex flex-col gap-4 w-full md:w-auto">
+          <div className="flex flex-row items-end gap-6">
+            <h1 className="text-5xl md:text-6xl font-serif font-bold tracking-tight leading-none mb-1">
               Projets
             </h1>
-            {/* Scène Spline 3D - Réduite et placée à droite du titre */}
-            <div className="hidden md:block w-[120px] h-[120px] rounded-full overflow-hidden pointer-events-auto bg-transparent border-2 border-[var(--text-color)]/10 shadow-lg">
-              <Spline scene="https://prod.spline.design/ZLyHU2KPbbgWCVKJ/scene.splinecode" />
+            {/* Scène Spline 3D - Réduite et placée à droite du titre avec effet dézoomé */}
+            <div className="hidden md:flex relative w-[100px] h-[100px] items-center justify-center pointer-events-auto bg-[var(--bg-color)] rounded-full overflow-hidden border-2 border-[var(--text-color)]/10 shadow-lg">
+              <div className="absolute flex items-center justify-center" style={{ width: '250%', height: '250%', left: '-75%', top: '-75%', transform: 'scale(0.4)', transformOrigin: 'center center' }}>
+                <Spline scene="https://prod.spline.design/ZLyHU2KPbbgWCVKJ/scene.splinecode" />
+              </div>
             </div>
           </div>
-          <p className="text-base text-[var(--text-muted)] max-w-[550px] leading-relaxed">
+          <p className="text-base text-[var(--text-muted)] max-w-[550px] leading-relaxed mt-2">
             Une sélection de projets réalisés dans le cadre de ma formation BTS SIO et de mes initiatives personnelles.
           </p>
         </div>
