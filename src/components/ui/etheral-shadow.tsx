@@ -21,7 +21,6 @@ interface ShadowOverlayProps {
     noise?: NoiseConfig;
     style?: CSSProperties;
     className?: string;
-    title?: string;
 }
 
 function mapRange(value: number, fromLow: number, fromHigh: number, toLow: number, toHigh: number): number {
@@ -35,8 +34,7 @@ export function EtheralShadow({
     animation = { scale: 100, speed: 50 },
     noise = { opacity: 0.2, scale: 1.2 },
     style,
-    className,
-    title
+    className
 }: ShadowOverlayProps) {
     const id = useId().replace(/:/g, "");
     const feTurbulenceRef = useRef<SVGFETurbulenceElement>(null);
