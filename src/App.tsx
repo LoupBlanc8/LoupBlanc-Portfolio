@@ -15,7 +15,7 @@ function AppContent() {
 
   return (
     <>
-      <EtheralShadow title="Ocean Deep" />
+      <EtheralShadow />
       <Layout>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
