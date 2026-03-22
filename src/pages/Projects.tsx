@@ -27,10 +27,16 @@ const Projects: React.FC = () => {
     >
       {/* Header + Filtre sur la même ligne */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8" style={{ marginBottom: 'clamp(80px, 10vh, 150px)' }}>
-        <div className="flex flex-col gap-5">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold tracking-tight">
-            Projets
-          </h1>
+        <div className="flex flex-col gap-5 w-full md:w-auto">
+          <div className="flex flex-row items-center gap-8">
+            <h1 className="text-5xl md:text-6xl font-serif font-bold tracking-tight">
+              Projets
+            </h1>
+            {/* Scène Spline 3D - Réduite et placée à droite du titre */}
+            <div className="hidden md:block w-[120px] h-[120px] rounded-full overflow-hidden pointer-events-auto bg-transparent border-2 border-[var(--text-color)]/10 shadow-lg">
+              <Spline scene="https://prod.spline.design/ZLyHU2KPbbgWCVKJ/scene.splinecode" />
+            </div>
+          </div>
           <p className="text-base text-[var(--text-muted)] max-w-[550px] leading-relaxed">
             Une sélection de projets réalisés dans le cadre de ma formation BTS SIO et de mes initiatives personnelles.
           </p>
@@ -38,11 +44,6 @@ const Projects: React.FC = () => {
 
         {/* Dropdown unique de filtrage */}
         <div className="relative z-[100] flex flex-col items-end gap-6 w-full md:w-auto">
-          {/* Scène Spline 3D */}
-          <div className="w-full md:w-[350px] aspect-[16/9] md:aspect-square rounded-2xl overflow-hidden pointer-events-auto bg-transparent mb-2">
-            <Spline scene="https://prod.spline.design/ZLyHU2KPbbgWCVKJ/scene.splinecode" />
-          </div>
-
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="group flex items-center gap-5 px-7 py-3.5 bg-transparent border-2 border-[var(--text-color)]/20 rounded-full transition-all duration-300 hover:border-[var(--accent-color)] hover:shadow-lg hover:shadow-[var(--accent-color)]/10 active:scale-[0.98]"
