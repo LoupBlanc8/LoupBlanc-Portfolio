@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, ExternalLink, ChevronDown, Check } from 'lucide-react';
+import Spline from '@splinetool/react-spline';
 import { projects } from '../lib/projects-data';
 
 const Projects: React.FC = () => {
@@ -36,7 +37,12 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Dropdown unique de filtrage */}
-        <div className="relative z-[100]">
+        <div className="relative z-[100] flex flex-col items-end gap-6 w-full md:w-auto">
+          {/* Scène Spline 3D */}
+          <div className="w-full md:w-[350px] aspect-[16/9] md:aspect-square rounded-2xl overflow-hidden pointer-events-auto bg-transparent mb-2">
+            <Spline scene="https://prod.spline.design/ZLyHU2KPbbgWCVKJ/scene.splinecode" />
+          </div>
+
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="group flex items-center gap-5 px-7 py-3.5 bg-transparent border-2 border-[var(--text-color)]/20 rounded-full transition-all duration-300 hover:border-[var(--accent-color)] hover:shadow-lg hover:shadow-[var(--accent-color)]/10 active:scale-[0.98]"
