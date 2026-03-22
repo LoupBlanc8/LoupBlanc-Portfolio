@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
         <NavLink to="/" className="nav-logo">
           <img
             src={isDark ? '/logo-ba-dark.png' : '/logo-ba.png'}
-            alt="BA Logo"
+            alt="AB Logo"
             className="nav-logo-img"
           />
         </NavLink>

@@ -33,10 +33,6 @@
   transition: filter 0.3s var(--easing), opacity 0.3s var(--easing);
 }
 
-/* Amélioration de l'intégration du logo sombre */
-[data-theme='dark'] .nav-logo-img {
-  filter: brightness(1.2) contrast(1.1);
-}
 
 
 .nav-links {
